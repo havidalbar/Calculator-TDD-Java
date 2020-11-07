@@ -3,12 +3,33 @@
  */
 package com.havidalbar.calculatorTDD;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+class Calculator{
+	private double result;
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-    }
+	public Double cancel(){
+		return this.result = 0.0;
+	}
+
+	public Double add(int number){
+		return this.result += number;
+	}
+
+	public Double subtract(int number){
+		return this.result -= number;
+	}
+
+	@Override
+	public String toString() {
+		return String.valueOf(this.result);
+	}
+}
+
+public class App {
+	public String getGreeting() {
+		return "Hello Havid!";
+	}
+
+	public static void main(String[] args) {
+		System.out.println(new App().getGreeting());
+	}
 }

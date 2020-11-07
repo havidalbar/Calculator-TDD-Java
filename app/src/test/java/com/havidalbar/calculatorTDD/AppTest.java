@@ -7,8 +7,45 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AppTest {
-    @Test public void testAppHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
-    }
+	@Test public void testAppHasAGreeting() {
+		App classUnderTest = new App();
+		assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+	}
+	@Test public void testAppOperationToString() {
+		Calculator calculate = new Calculator();
+		assertEquals("0.0", calculate.toString());
+	}
+	@Test public void testAppOperationCancel() {
+		Calculator calculate = new Calculator();
+		assertEquals(new Double(0.0), calculate.cancel());
+	}
+
+	@Test public void testAppOperationAdd() {
+		int number = 4;
+		Calculator calculate = new Calculator();
+		assertEquals(new Double(4.0), calculate.add(number));
+	}
+
+	@Test public void testAppOperationSubtract() {
+		int number = 5;
+		Calculator calculate = new Calculator();
+		assertEquals(new Double(-5.0), calculate.subtract(number));
+	}
+
+	@Test public void testAppOperationAddAndSubtract() {
+		int number1 = 5;
+		int number2 = 2;
+		Calculator calculate = new Calculator();
+		calculate.add(number1);
+		assertEquals(new Double(3.0), calculate.subtract(number2));
+	}
+
+	@Test public void testAppOperationAddAndSubtractAndCancel() {
+		int number1 = 5;
+		int number2 = 2;
+		Calculator calculate = new Calculator();
+		calculate.add(number1);
+		calculate.subtract(number2);
+		assertEquals(new Double(0.0), calculate.cancel());
+	}
 }
