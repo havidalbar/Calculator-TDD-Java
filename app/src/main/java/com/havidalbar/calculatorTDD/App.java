@@ -6,16 +6,16 @@ package com.havidalbar.calculatorTDD;
 class Calculator{
 	private double result;
 
-	public Double cancel(){
-		return this.result = 0.0;
+	public void cancel(){
+		this.result = 0.0;
 	}
 
-	public Double add(int number){
-		return this.result += number;
+	public void add(int number){
+		this.result += number;
 	}
 
-	public Double subtract(int number){
-		return this.result -= number;
+	public void subtract(int number){
+		this.result -= number;
 	}
 
 	@Override
